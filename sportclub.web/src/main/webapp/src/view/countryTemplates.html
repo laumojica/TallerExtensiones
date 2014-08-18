@@ -4,9 +4,9 @@
     <table class="table striped">
     <thead>
     <tr>
-		 <th>Name</th>
-		 <th>Population</th>
-    <th>Actions</th>
+		 <th>Nombre</th>
+		 <th>Poblacion</th>
+    <th>Acciones</th>
     </tr>
     </thead>
     <tbody>
@@ -16,10 +16,10 @@
 		<td><%= htmlEncode(country.getDisplay('population')) %></td>
     <td>
     <% if(showEdit) {%>
-    <a onclick="Backbone.trigger('<%= componentId %>-country-edit',{id:<%= country.id %>}); return false" >Edit</a> |
+    <a onclick="Backbone.trigger('<%= componentId %>-country-edit',{id:<%= country.id %>}); return false" >Editar</a> |
 	<% } %> 
 	<% if(showDelete) {%>
-    <a onclick="Backbone.trigger('<%= componentId %>-country-delete',{id:<%= country.id %>}); return false" >Delete</a> 
+    <a onclick="Backbone.trigger('<%= componentId %>-country-delete',{id:<%= country.id %>}); return false" >Borrar</a> 
 	<% } %>    
 	</td>
     </tr>
@@ -36,12 +36,12 @@
     <input type="hidden" name="id" value="<%= country.id %>"/>
     <% }%>
 		<div class="form-group" >
-		<label for="name">Name</label>
-    	<input type="text" class="form-control" id="name" name="name" placeholder="Enter value" value="<%= country.get('name') %>"/>	
+		<label for="name">Nombre</label>
+    	<input type="text" class="form-control" id="name" name="name" placeholder="Ingrese un valor" value="<%= country.get('name') %>"/>	
 		</div>
 		<div class="form-group" >
-		<label for="population">Population</label>
-    	<input type="text" class="form-control" id="population" name="population" placeholder="Enter value" value="<%= country.get('population') %>"/>	
+		<label for="population">Poblacion</label>
+    	<input type="text" class="form-control" id="population" name="population" placeholder="Ingrese un valor" value="<%= country.get('population') %>"/>	
 		</div>
     </form>
     </div>

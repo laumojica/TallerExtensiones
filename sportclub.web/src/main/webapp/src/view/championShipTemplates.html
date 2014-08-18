@@ -4,9 +4,9 @@
     <table class="table striped">
     <thead>
     <tr>
-		 <th>Name</th>
-		 <th>Start Date</th>
-		 <th>End Date</th>
+		 <th>Nombre</th>
+		 <th>Fecha De Inicio</th>
+		 <th>Fecha De Termino</th>
     <th>Actions</th>
     </tr>
     </thead>
@@ -18,10 +18,10 @@
 		<td><%= htmlEncode(championShip.getDisplay('endDate')) %></td>
     <td>
     <% if(showEdit) {%>
-    <a onclick="Backbone.trigger('<%= componentId %>-championShip-edit',{id:<%= championShip.id %>}); return false" >Edit</a> |
+    <a onclick="Backbone.trigger('<%= componentId %>-championShip-edit',{id:<%= championShip.id %>}); return false" >Editar</a> |
 	<% } %> 
 	<% if(showDelete) {%>
-    <a onclick="Backbone.trigger('<%= componentId %>-championShip-delete',{id:<%= championShip.id %>}); return false" >Delete</a> 
+    <a onclick="Backbone.trigger('<%= componentId %>-championShip-delete',{id:<%= championShip.id %>}); return false" >Borrar</a> 
 	<% } %>    
 	</td>
     </tr>

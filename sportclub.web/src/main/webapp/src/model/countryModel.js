@@ -33,7 +33,7 @@ define(['model/_countryModel'], function() {
  	validate: function(attrs,options){
             var validationMessage = "";
             if(!attrs.name){
-                validationMessage = "The name can't be empty.";
+                validationMessage = "El nombre no puede ser vacio";
             }
             if(validationMessage.length>0){
                return validationMessage;
