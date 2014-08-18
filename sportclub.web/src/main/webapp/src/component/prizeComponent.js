@@ -32,7 +32,14 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'prize',
         model: App.Model.PrizeModel,
         listModel: App.Model.PrizeList,
-        controller : App.Controller.PrizeController
+        controller : App.Controller.PrizeController,
+        postInit: function(){
+            var self = this;
+            
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+           
+        }
     });
     return App.Component.PrizeComponent;
 });

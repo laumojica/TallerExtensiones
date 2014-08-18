@@ -32,7 +32,14 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'documentType',
         model: App.Model.DocumentTypeModel,
         listModel: App.Model.DocumentTypeList,
-        controller : App.Controller.DocumentTypeController
+        controller : App.Controller.DocumentTypeController,
+        postInit: function(){
+            var self = this;
+            
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+           
+        }
     });
     return App.Component.DocumentTypeComponent;
 });

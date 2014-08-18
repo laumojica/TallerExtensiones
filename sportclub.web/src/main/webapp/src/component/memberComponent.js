@@ -32,7 +32,17 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'member',
         model: App.Model.MemberModel,
         listModel: App.Model.MemberList,
-        controller : App.Controller.MemberController
+        controller : App.Controller.MemberController,
+        postInit: function(){
+            var self = this;
+            
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+            this.addButton({name: "Edades", icon: "glyphicon-stats", }, function() {
+                 self.componentController.memberEdades();
+             });
+           
+        }
     });
     return App.Component.MemberComponent;
 });

@@ -32,7 +32,14 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'record',
         model: App.Model.RecordModel,
         listModel: App.Model.RecordList,
-        controller : App.Controller.RecordController
+        controller : App.Controller.RecordController,
+        postInit: function(){
+            var self = this;
+            
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+           
+        }
     });
     return App.Component.RecordComponent;
 });

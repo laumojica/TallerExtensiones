@@ -32,7 +32,14 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'referee',
         model: App.Model.RefereeModel,
         listModel: App.Model.RefereeList,
-        controller : App.Controller.RefereeController
+        controller : App.Controller.RefereeController,
+        postInit: function(){
+            var self = this;
+            
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+           
+        }
     });
     return App.Component.RefereeComponent;
 });

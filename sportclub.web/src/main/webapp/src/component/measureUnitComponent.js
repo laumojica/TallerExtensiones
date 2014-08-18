@@ -32,7 +32,14 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'measureUnit',
         model: App.Model.MeasureUnitModel,
         listModel: App.Model.MeasureUnitList,
-        controller : App.Controller.MeasureUnitController
+        controller : App.Controller.MeasureUnitController,
+        postInit: function(){
+            var self = this;
+            
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+           
+        }
     });
     return App.Component.MeasureUnitComponent;
 });

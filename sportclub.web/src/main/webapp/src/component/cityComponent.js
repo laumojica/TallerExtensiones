@@ -32,7 +32,14 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'city',
         model: App.Model.CityModel,
         listModel: App.Model.CityList,
-        controller : App.Controller.CityController
+        controller : App.Controller.CityController,
+        postInit: function(){
+            var self = this;
+            
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+           
+        }
     });
     return App.Component.CityComponent;
 });
