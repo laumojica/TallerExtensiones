@@ -32,17 +32,24 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         name: 'sport',
         model: App.Model.SportModel,
         listModel: App.Model.SportList,
+
         controller : App.Controller.SportController,
+      
         postInit: function(){
             var self = this;
             
             this.toolbarModel.set('showPrint', false);
             this.toolbarModel.set('showSearch', false);
-            this.addButton({name: "Promedio", icon: "glyphicon-stats", }, function() {
+            this.addButton({name: "Promedio", icon: "glyphicon-stats" }, function() {
                  self.componentController.sportPromedio();
              });
+             Backbone.on(self.componentId + '-sport-show-average', function(params) {
+                self.componentController.average(params);
+            });
            
         }
     });
+
     return App.Component.SportComponent;
+    
 });

@@ -32,9 +32,39 @@ define(['model/_addressModel'], function() {
 
  	validate: function(attrs,options){
             var validationMessage = "";
+            
+            if(isNaN(attrs.street)){
+                validationMessage += "Debe ser un numero.";
+            }
+            if(isNaN(attrs.aveneu)){
+                validationMessage += "Debe ser un numero";
+            }
+            if(attrs.street.length>3){
+                validationMessage += "El numero no puede tener mas de 3 digitos";
+            }
+            if(attrs.aveneu.length>3){
+                validationMessage += "El numero no puede tener mas de 3 digitos";
+            }
+            if((attrs.aveneu)=="")
+            {
+                validationMessage+= "El campo no puede estar vacio";
+            }
+            if((attrs.street)=="")
+            {
+                validationMessage+= "El campo no puede estar vacio";
+            }
+            if((attrs.cityId)=="None")
+            {
+                validationMessage+= "El campo no puede estar vacio";
+            }
+
+
+            
+            
             if(validationMessage.length>0){
                return validationMessage;
             }
+            
         }
 
     });

@@ -33,7 +33,53 @@ define(['model/_memberModel'], function() {
  	validate: function(attrs,options){
             var validationMessage = "";
             if(!attrs.name){
-                validationMessage = "The name can't be empty.";
+                validationMessage += "The name lau can't be empty.";
+                
+            }
+            if(attrs.firstName.length==0){
+                validationMessage += "The firstname can't be empty.";
+                
+            }
+            if(attrs.lastName.length==0){
+                validationMessage += "The lastname can't be empty.";
+                
+            }
+
+            if(!attrs.docNumber){
+                validationMessage += "The document number can't be empty.";
+                
+            }
+             if(  attrs.docNumber.length<5){
+                validationMessage += "El numero de documento debe tener 5 caracteres";
+                
+            }
+          
+            if((attrs.documenttypeId)=="None"){
+                validationMessage += "The document type id must be of none.";
+                
+            }
+            if((attrs.partnerId)=="None"){
+                validationMessage += "The partner id must be of none.";
+                
+            }
+            
+            var fechaCompleta = attrs.birthDate.split('/');
+            var dia = fechaCompleta[0];
+            var mes = fechaCompleta[1];
+            var year= fechaCompleta[2];
+            
+            var dateActual= new Date();
+            dateActual.setFullYear(year, mes-1,dia);
+            var temp = new Date();
+            var yearHoy= temp.getYear();
+            
+            if(dateActual>= temp)
+            {
+                validationMessage += "La fecha no está dentro de un rango válido";
+            }
+            if((yearHoy-year)<101)
+            {
+                validationMessage+= "La persona no puede tener mas de 100 años.";
             }
             if(validationMessage.length>0){
                return validationMessage;
