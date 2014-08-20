@@ -39,6 +39,9 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
             this.toolbarModel.set('showPrint', false);
             this.toolbarModel.set('showSearch', false);
            
+        Backbone.on(self.componentId + '-referee-show-experiencia', function(params) {
+                self.componentController.experiencia(params);
+            });
         }
     });
     return App.Component.RefereeComponent;

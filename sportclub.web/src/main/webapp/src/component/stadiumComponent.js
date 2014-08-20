@@ -39,7 +39,11 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
             this.toolbarModel.set('showPrint', false);
             this.toolbarModel.set('showSearch', false);
            
-        }
+        
+    Backbone.on(self.componentId + '-stadium-show-capacidad', function(params) {
+                self.componentController.capacidad(params);
+            });
+    }
     });
     return App.Component.StadiumComponent;
 });

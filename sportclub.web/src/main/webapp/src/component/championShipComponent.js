@@ -43,6 +43,10 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
             this.addButton({name: "Idioma", icon: "glyphicon-question-sign", }, function() {
                  self.componentController.language();
             });
+           
+            Backbone.on(self.componentId + '-championShip-show-costo', function(params) {
+                self.componentController.costo(params);
+            });
         }
     });
     return App.Component.ChampionShipComponent;

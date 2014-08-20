@@ -15,7 +15,10 @@
     <tr>
 		<td><%= htmlEncode(championShip.getDisplay('name')) %></td>
 		<td><%= htmlEncode(championShip.getDisplay('startDate')) %></td>
-		<td><%= htmlEncode(championShip.getDisplay('endDate')) %></td>
+		<td><%= htmlEncode(championShip.getDisplay('endDate')) %></td>  \n\
+                <td><a onclick="Backbone.trigger('<%= componentId %>-championShip-show-costo',{startDate:'<%= htmlEncode(championShip.getDisplay('startDate')) %>',endDate:'<%= htmlEncode(championShip.getDisplay('endDate')) %>'}); return false;" >Costo y duracion</a></td>
+ 
+        
     <td>
     <% if(showEdit) {%>
     <a onclick="Backbone.trigger('<%= componentId %>-championShip-edit',{id:<%= championShip.id %>}); return false" >Editar</a> |
